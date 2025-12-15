@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caio & Ciana - (17) 99756-3038 (11) 98648 1146 / </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4dabf7;        /* Azul claro principal */
+            --primary-dark: #3b8bc9;    /* Tom mais escuro para hover */
+            --secondary: #74c0fc;      /* Azul claro suave para gradientes */
+            --accent: #a5d8ff;         /* Azul bem claro para destaques */
+            --light: #f8f9fa;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --border-radius: 16px;
+            --shadow-sm: 0 2px 8px rgba(77, 171, 247, 0.1);
+            --shadow-md: 0 4px 20px rgba(77, 171, 247, 0.15);
+            --shadow-lg: 0 12px 40px rgba(77, 171, 247, 0.2);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            color: var(--dark);
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid rgba(77, 171, 247, 0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            align-items: center;
+           color: #032453;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2.1rem;
+            color: var(--primary);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+        
+        nav ul li a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            position: relative;
+            transition: var(--transition);
+            padding: 8px 0;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--primary);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 26px;
+            height: 3px;
+            background: var(--dark);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+        
+        section {
+            padding: 110px 20px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        #hero {
+            padding: 150px 20px 90px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(77, 171, 247, 0.08) 0%, rgba(116, 192, 252, 0.08) 100%);
+            border-radius: var(--border-radius);
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, var(--shadow-lg), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 2rem;
+            color: var(--light);
+            margin-bottom: 40px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.15rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transition: var(--transition);
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2.6rem;
+            margin-bottom: 45px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--primary-dark);
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 28px;
+            margin-top: 45px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 36px 26px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(77, 171, 247, 0.1);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .card-icon {
+            font-size: 3.2rem;
+            margin-bottom: 22px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 14px;
+            color: var(--dark);
+        }
+        
+        .card p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        
+        #contato {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            padding: 70px 45px;
+            margin-top: 50px;
+            border: 1px solid rgba(77, 171, 247, 0.1);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 36px;
+            margin-bottom: 45px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+        
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .contact-details h4 {
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1.2rem;
+        }
+        
+        .contact-details p {
+            color: var(--gray);
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+        
+        .contact-details a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            transition: var(--transition);
+            font-size: 1.05rem;
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary-dark);
+            transform: translateX(3px);
+        }
+        
+        .contact-details a i {
+            font-size: 1.2rem;
+        }
+        
+        .map-container {
+            margin-top: 45px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            height: 420px;
+            border: 1px solid rgba(77, 171, 247, 0.15);
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-top: 70px;
+            border-top: 1px solid rgba(77, 171, 247, 0.15);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 72px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 72px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(14px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: var(--shadow-lg);
+                border-top: 1px solid rgba(77, 171, 247, 0.1);
+            }
+            
+            nav ul.show {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 18px 0;
+            }
+            
+            nav ul li a {
+                font-size: 1.3rem;
+                padding: 14px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.6rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.15rem;
+            }
+            
+            section {
+                padding: 90px 15px 45px;
+            }
+            
+            #contato {
+                padding: 50px 25px;
+            }
+            
+            .map-container {
+                height: 320px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .btn-primary {
+                padding: 14px 28px;
+                font-size: 1.05rem;
+            }
+            
+            h2 {
+                font-size: 2.1rem;
+            }
+            
+            .card {
+                padding: 30px 20px;
+            }
+        }
+
+/* WhatsApp Flutuante - CORRIGIDO */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .whatsapp-float a {
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px; /* Tamanho perfeito do ícone */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s infinite;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+
+/* Container do banner */
+        #banner {
+            width: 1200px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            background: #0a1f3d; /* cor de fundo caso as imagens demorem a carregar */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Cada imagem */
+        .slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;           /* cobre todo o banner sem deformar */
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        /* Animação de fade (4 imagens = 16s total, 4s cada) */
+        .slide:nth-child(1) { animation: fade 16s infinite 0s; }
+        .slide:nth-child(2) { animation: fade 16s infinite 4s; }
+        .slide:nth-child(3) { animation: fade 16s infinite 8s; }
+        .slide:nth-child(4) { animation: fade 16s infinite 12s; }
+
+        @keyframes fade {
+            0%   { opacity: 0; }
+            6.25% { opacity: 75%; }   /* 1s de fade-in */
+            25%  { opacity: 75%; }   /* fica visível por ~3s */
+            31.25% { opacity: 0; } /* 1s de fade-out */
+            100% { opacity: 0; }
+        }
+
+        /* Opcional: texto ou logo por cima */
+        .overlay {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+        .overlay h1 { font-size: 48px; margin: 0; }
+        .overlay p  { font-size: 24px; margin: 10px 0 0; }
+
+    
+    
+
+
+    /* Estilo da imagem em miniatura */
+        .imagem-zoom {
+            width: 200px;           /* Tamanho pequeno (miniatura) */
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease; /* Animação suave do zoom */
+            cursor: pointer;
+        }
+
+        /* Efeito de zoom ao passar o mouse */
+        .imagem-zoom:hover {
+            transform: scale(1.8);  /* Aumenta em 200% (você pode mudar o valor) */
+            z-index: 10;
+        }
+
+    
+    
+    </style>
+</head>
+<body background="    
+
+<div id="banner">
+       <img src="imagens/foto_vovo22.jpg"     alt="Controle"     class="slide">
+    <img src="imagens/controle.jpg"     alt="Controle"     class="slide">
+    <img src="imagens/cama_lateral.jpg" alt="Cama lateral" class="slide">
+    <img src="imagens/cama_inclinada.jpg" alt="Cama inclinada" class="slide">
+    <img src="imagens/cama_completa.jpg" alt="Cama completa" class="slide">
+
+
+">
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    Caio & Ciana </a> <p>Locação de Cama Hospitalar - São Jose do Rio Preto <br> Tel.(17) 99756-3038 / (11) 98648-1146
+
+
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="#sobre" class="active">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!-- Texto opcional (apague se não quiser) -->
+    <div class="overlay">
+        <h1>    </h1>  </p>
+    </div>
+</div>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="container"><center>Aluguel de Cama Hospitalar <BR> em São José do Rio Preto e região </center>        </h2>
+                <p class="hero-subtitle">Locação de equipamentos hospitalares com qualidade, 
+                    conforto e atendimento humanizado para você e sua família.</p>
+
+                    
+
+
+                <a href="https://wa.me/5511986481146?text=Olá!quero informações sobre Locação de camas Hospitalares." 
+                target="_blank" class="btn-primary">
+                    <i class="fab fa-whatsapp"></i> Fale Conosco
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="container">
+        <h2>Sobre Nós</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <h3>Especializados em Cuidados</h3>
+                <p>Oferecemos equipamentos hospitalares de qualidade para locação, garantindo conforto e segurança para pacientes em recuperação em casa.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Confiabilidade</h3>
+                <p>Todos os nossos equipamentos passam por rigorosos processos de higienização e manutenção, seguindo padrões de qualidade.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Atendimento 24h</h3>
+                <p>Suporte técnico e atendimento humanizado disponível a qualquer hora para garantir a melhor experiência para você e sua família.</p>
+            </div>
+        </div>
+    </section>
+<br><br>
+    <section id="servicos" class="container">
+        <h2>Nossos Serviços</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-bed-pulse"></i></i>
+                </div>
+                <h3>Cama Hospitalar Elétrica (Locação)</h3>
+                <p>Cama hospitalar elétrica Premium + Colchão Hospitalar Impermeável. Cama automática com ajustes por controle remoto da altura da cama,
+                     costas e pernas para máximo conforto do paciente e de quem cuida. com rodizios e travas que facilita a movimentação da cama A partir de R$ 350,00 por mês</p>
+<BR>
+
+ <img src="imagens/cama_eletrica.jpg" 
+             alt="Cama Eletrica" 
+             class="imagem-zoom">
+
+
+
+
+
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-bed"></i>
+                </div>
+                <h3>Cama Hospitalar Manual (Locação)</h3>
+                <p>Cama hospitalar manual + Colchão Hospitalar Impermeável. Cama com regulagem manual (por manivela) ajuste de posições das costas e pernas, 
+                    com rodizios e travas que facilita a movimentação da cama, robusta e segura, uma alternativa econômica e confortavel, ideal para cuidados domiciliares
+                      A patir de R$ 120,00 por mês</p><BR>
+
+                        <img src="imagens/cama_inclinada_old.jpg" 
+             alt="Cama manual" 
+             class="imagem-zoom">
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-bath"></i>
+                </div>
+                <h3>Cadeira de Banho (Locação)</h3>
+                <p>Cadeira de banho ergonômica e segura, com estrutura reforçada e apoio para braços, facilitando a higiene do paciente. A partir de R$ 60,00 por mês </p>
+            <BR>
+
+                        <img src="imagens/cadeira_banho.jpg" 
+             alt="Cama manual" 
+             class="imagem-zoom">
+            
+            
+            
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-wheelchair"></i>
+                </div>
+                <h3>Cadeira de Rodas (Locação)</h3>
+                <p>Locação de cadeira de rodas confortável e resistente, com diferentes modelos para atender diversas necessidades de mobilidade. A partir de R$ 60,00 por mês</p>
+            
+             <BR>
+
+                        <img src="imagens/cadeira_rodas.jpg" 
+             alt="Cama manual" 
+             class="imagem-zoom">
+            
+            
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="container">
+        <h2>Entre em Contato</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Endereço</h4>
+                    <p>Rua João Carlos Gonçalves, 645</p>
+                    <p>Jardim Yolanda</p>
+                    <p>São José do Rio Preto - SP</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Telefones</h4>
+                    <p>(11) 98648-1146</p>
+                    <p>(17) 99756-3038</p>
+                    <a href="https://wa.me/5511986481146" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp (11) 98648-1146
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.123456789!2d-49.362251685!3d-20.835943086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdad6e0a7b1f0d%3A0x4d1c5a1a4b0f0e2a!2sRua%20Jo%C3%A3o%20Carlos%20Gon%C3%A7alves%2C%20645%20-%20Jardim%20Yolanda%2C%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20-%20SP%2C%2015061-000!5e0!3m2!1spt-BR!2sbr!4v1720000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+
+<!-- WhatsApp Flutuante (AGORA FUNCIONANDO PERFEITAMENTE) -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/5511986481146?text=Olá!quero informações sobre Locação de camas Hospitalares." 
+           target="_blank" 
+           aria-label="Fale conosco no WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="container">
+            
+            <p>Locação de Camas Hospitalar Home Care em São José do Rio Preto e região.</p>
+            <p>&copy; 2025 Caio & Ciana. Todos os direitos reservados.</p>
+              <p>DEUS SEJA SEMPRE LOUVADO</p>
+
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navUl = document.querySelector('nav ul');
+        
+        hamburger.addEventListener('click', () => {
+            navUl.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Active link highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach
+
+(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+                // Close mobile menu
+                navUl.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
